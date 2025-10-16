@@ -65,7 +65,7 @@ function Card({ limit = 3, showEventCard = true }: NewsProps) {
                 <div className="loc">
                   <FaMapMarkerAlt className="icon" />
                   <span>
-                    <a href="#">{card.location}</a>
+                    {card.location}
                   </span>
                 </div>
                 <div className="date">

@@ -1,6 +1,6 @@
 :root {
   --background: #ffffff;
-  --secondry: #BFFF37
+  --secondry: #BFFF37;
   --primary: #A2ABF6;
 }
 
@@ -8,7 +8,7 @@
   :root {
     --background: #1e2033;
     --foreground: #ededed;
-     --primary: #171717;
+    --primary: #A2ABF6;
   }
 }
 
@@ -25,21 +25,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 p {
   color: var(--primary);
-   font-size: 18px;
+  font-size: 18px;
+  margin: 10 0;
+  font-weight: 500;
 }
 
-a:hover {
-  color: var(--secondry);
-
-}
-
-/* Card Title */
 h3 {
   font-size: 28px;
+  margin: 15px 0;
+  color: #A2ABF6;
   font-weight: 600;
-  line-height: 1;
 }
 
 /* Grid Layout */
@@ -47,40 +45,103 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 30px;
-  padding: 40px 20px;
+  padding: 20px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Event Card  */
-
 .event_card {
   font-size: 18px;
+  color: #A2ABF6;
 
 }
-.event_card h3 {
- color: var(--secondry);
-}
 
-.event_card p {
-  color: red;
-}
 .event_card .img {
   width: 100%;
   height: 220px;
-  object-fit: cover;
   border-radius: 16px;
 }
+
 .event_card .footer {
   display: flex;
   gap: 20px;
-}
-.event_card .footer {
-  background: red;
-}
-.event_card .footer .icon {
-  color: #a2abf6;
-  font-size: 1rem;
+  margin-top: 20px;
 }
 
-/* End Event Card  */
+.footer span {
+  padding-left: 5px;
+}
+
+
+
+/* team Card  */
+.team-card {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  color: #A2ABF6;
+
+}
+
+.team-content img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-loc-time {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+
+/* Post card */
+
+.post-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  
+}
+.post-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+.post-card .date {
+  color: #1E2033;
+}
+.post-content {
+  padding: 20px;
+}
+.post-content h3 {
+  color: #1E2033;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.post-content p{
+  color: #565866;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.card-buttons {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    color: #1E2033;
+}
+.card-button {
+    background-color: #9539F2; 
+    color: white;
+    padding: 7px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 10px;
+
+}

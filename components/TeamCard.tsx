@@ -47,23 +47,23 @@ function TeamCard({ members = defaultMembers, limit = 3 }: TeamCardProps) {
   const displayedMembers = members.slice(0, limit);
 
   return (
-    <div className="team-grid">
+    <div className="wraper">
       {displayedMembers.map((member) => (
         <div key={member.id} className="team-card">
-          <div className="team-card-content">
+          <div className="team-content">
             <div className="team-avatar">
               <Image 
                 src={member.avatar} 
                 alt={member.name}
                 width={500}
                 height={500}
-                className="avatar-image"
+                className="img"
               />
             </div>
             <div className="team-info">
-              <h3 className="team-name">{member.name}</h3>
-              <p className="team-position">{member.position}</p>
-              <div className="team-location-time">
+              <h3>{member.name}</h3>
+              <p>{member.position}</p>
+              <div className="team-loc-time">
                 <span className="team-location">{member.location}</span>
                 <span className="team-time">{member.time}</span>
               </div>
