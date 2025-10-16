@@ -52,15 +52,18 @@ h3 {
   margin: 0 auto;
 }
 
+/* Event Card  */
+
 .event_card {
   font-size: 18px;
 
 }
 .event_card h3 {
- 
+ color: var(--secondry);
 }
+
 .event_card p {
-  color: blue;
+  color: red;
 }
 .event_card .img {
   width: 100%;
@@ -79,3 +82,5 @@ h3 {
   color: #a2abf6;
   font-size: 1rem;
 }
+
+/* End Event Card  */
