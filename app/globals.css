@@ -1,21 +1,57 @@
+/* styles/themes.css */
+
 :root {
-  --background: #ffffff;
-  --secondry: #BFFF37;
-  --primary: #A2ABF6;
+  /* Light theme */
+  --background-color-light: #ffffff;
+  --text-color-light: #1E2033;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1e2033;
-    --foreground: #ededed;
-    --primary: #A2ABF6;
-  }
+[data-theme='dark'] {
+  /* Dark theme */
+  --background-color-dark: #1e2033  ;
+  --text-color-dark: #A2ABF6;
+  --button-text-dark: #ffffff;
 }
+
+
+html {
+  /* Default to light theme */
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+ 
+
+}
+
+html[data-theme='dark'] {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+
+}
+
+/* Example button styling that adapts to theme */
+.theme-button {
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  justify-self: end;
+}
+
+html[data-theme='dark'] .theme-button {
+  background-color: var(--button-background-dark);
+  color: var(--button-text-dark);
+}
+
+
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+   max-width: 1200px;
+   overflow-x: hidden;
+   margin: 0 auto;
+   padding: 10px 4px;
+
 }
 
 body {
@@ -36,24 +72,22 @@ p {
 h3 {
   font-size: 28px;
   margin: 15px 0;
-  color: #A2ABF6;
   font-weight: 600;
 }
 
 /* Grid Layout */
 .wraper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  padding: 20px 20px;
-  max-width: 1200px;
+  padding: 20px 0px;
   margin: 0 auto;
 }
 
 /* Event Card  */
 .event_card {
   font-size: 18px;
-  color: #A2ABF6;
+
 
 }
 
@@ -80,7 +114,6 @@ h3 {
   display: flex;
   margin: 0 auto;
   text-align: center;
-  color: #A2ABF6;
 
 }
 
@@ -109,16 +142,15 @@ h3 {
   height: auto;
   border-radius: 16px;
 }
-.post-card .date {
-  color: #1E2033;
-}
+
 .post-content {
   padding: 20px;
 }
 .post-content h3 {
-  color: #1E2033;
   font-size: 24px;
   font-weight: 500;
+  color: #1E2033;
+
 }
 
 .post-content p{
@@ -127,12 +159,17 @@ h3 {
   font-weight: 400;
   line-height: 100%;
 }
+.card-buttons span{
+  font-size: 13px;
+  color: #565866;
+}
 
 .card-buttons {
     display: flex;
     flex-wrap: wrap; 
-    gap: 10px;
+    gap: 5px;
     color: #1E2033;
+    align-items: center;
 }
 .card-button {
     background-color: #9539F2; 
@@ -144,4 +181,35 @@ h3 {
     font-weight: 700;
     margin-right: 10px;
 
+}
+
+
+.ArticleFeed h2{
+  font-size: 24px;
+  font-weight: 500;
+}
+.ArticleFeed img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+.ArticleFeed .category{
+   background-color: #BFFF37; 
+    color: #1E2033;
+    padding: 7px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.ArticleFeed h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.ArticleFeed .border{
+  border-top: #A2ABF6 solid 1px;
+  padding-top: 25px;
 }

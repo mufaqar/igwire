@@ -23,7 +23,7 @@ const eventCardsData = [
         altText: 'Casino industry event',
         date: '18 Mar, 2025',
         title: 'The Rise of Live Casino: Real Dealers, Real Excitement',
-        description: `The iGaming industry continues to evolve rapidly, with new regulations, partnerships, and product launches shaping the landscape.`,
+        description: ``,
         location: 'Madrid, Spain',
         eventDate: 'October 12-16, 2025',
         buttons: [
@@ -81,12 +81,10 @@ function PostCard({ limit = 3, showEventCard = true }: NewsProps) {
                                     ))}
                                 </div>
                             )}
-                            {card.date}
+                            <span>{card.date}</span>
                         </div>
                         <h3>{card.title}</h3>
                         <p>{card.description}</p>
-
-
                     </div>
                 </div>
             ))}
