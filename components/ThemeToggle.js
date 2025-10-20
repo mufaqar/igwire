@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaLightbulb , FaRegLightbulb  } from "react-icons/fa6";
+import { FaLightbulb, FaRegLightbulb } from "react-icons/fa6";
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState('light');
@@ -26,9 +26,11 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button className="theme-button" onClick={toggleTheme}>
-      {theme === 'light' ? <FaLightbulb /> : <FaRegLightbulb />} 
-    </button>
+    <section className='container'>
+      <button className="theme-button" onClick={toggleTheme}>
+        {theme === 'light' ? <FaLightbulb /> : <FaRegLightbulb />}
+      </button>
+    </section>
   );
 };
 

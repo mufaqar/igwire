@@ -46,37 +46,39 @@ function Card({ limit = 3, showEventCard = true }: NewsProps) {
   const displayedCards = eventCardsData.slice(0, limit);
 
   return (
-    <div className="wraper">
-      {showEventCard &&
-        displayedCards.map((card) => (
-          <div key={card.id} className="event_card">
-            <Image
-              src={card.imageSrc}
-              width={500}
-              height={250}
-              alt={card.altText}
-              className="img"
-            />
-            <div className="content">
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-              <p>{card.additionalInfo}</p>
-              <div className="footer">
-                <div className="loc">
-                  <FaMapMarkerAlt className="icon" />
-                  <span>
-                    {card.location}
-                  </span>
-                </div>
-                <div className="date">
-                  <FaCalendar className="icon" />
-                  <span>{card.eventDate}</span>
+    <section className="container">
+      <div className="wraper">
+        {showEventCard &&
+          displayedCards.map((card) => (
+            <div key={card.id} className="event_card">
+              <Image
+                src={card.imageSrc}
+                width={500}
+                height={250}
+                alt={card.altText}
+                className="img"
+              />
+              <div className="content">
+                <h3>{card.title}</h3>
+                <p>{card.description}</p>
+                <p>{card.additionalInfo}</p>
+                <div className="footer">
+                  <div className="loc">
+                    <FaMapMarkerAlt className="icon" />
+                    <span>
+                      {card.location}
+                    </span>
+                  </div>
+                  <div className="date">
+                    <FaCalendar className="icon" />
+                    <span>{card.eventDate}</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-    </div>
+          ))}
+      </div>
+    </section>
   );
 }
 

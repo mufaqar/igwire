@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { FaCalendar, FaMapMarkerAlt } from 'react-icons/fa';
 
 const eventCardsData = [
     {
@@ -13,8 +12,8 @@ const eventCardsData = [
         location: 'Madrid, Spain',
         eventDate: 'October 12-16, 2025',
         buttons: [
-            { text: 'Learn More', link: '/learn-more' },
-            { text: 'Register', link: '/register' }
+            { text: 'Learn More', link: '#' },
+            { text: 'Register', link: '#' }
         ]
     },
     {
@@ -27,7 +26,7 @@ const eventCardsData = [
         location: 'Madrid, Spain',
         eventDate: 'October 12-16, 2025',
         buttons: [
-            { text: 'Learn More', link: '/learn-more' },
+            { text: 'Learn More', link: '#' },
         ]
     },
     {
@@ -40,8 +39,8 @@ const eventCardsData = [
         location: 'Madrid, Spain',
         eventDate: 'October 12-16, 2025',
         buttons: [
-            { text: 'Learn More', link: '/learn-more' },
-            { text: 'Register', link: '/register' },
+            { text: 'Learn More', link: '#' },
+            { text: 'Register', link: '#' },
 
         ]
     },
@@ -57,38 +56,40 @@ function PostCard({ limit = 3, showEventCard = true }: NewsProps) {
     const displayedCards = eventCardsData.slice(0, limit);
 
     return (
-        <div className='wraper'>
-            {showEventCard && displayedCards.map((card) => (
-                <div key={card.id} className='post-card'>
-                    <div className='img'>
-                        <Image
-                            src={card.imageSrc}
-                            width={500}
-                            height={500}
-                            alt={card.altText}
-                            className='img'
-                        />
+        <section className='container'>
+            <div className='wraper'>
+                {showEventCard && displayedCards.map((card) => (
+                    <div key={card.id} className='post-card'>
+                        <div className='img'>
+                            <Image
+                                src={card.imageSrc}
+                                width={500}
+                                height={500}
+                                alt={card.altText}
+                                className='img'
+                            />
 
-                    </div>
-                    <div className='post-content'>
-                        <div className='card-buttons'>
-                            {card.buttons && card.buttons.length > 0 && (
-                                <div className=''>
-                                    {card.buttons.map((button, index) => (
-                                        <a key={index} href={button.link} className='card-button'>
-                                            {button.text}
-                                        </a>
-                                    ))}
-                                </div>
-                            )}
-                            <span>{card.date}</span>
                         </div>
-                        <h3>{card.title}</h3>
-                        <p>{card.description}</p>
+                        <div className='post-content'>
+                            <div className='card-buttons'>
+                                {card.buttons && card.buttons.length > 0 && (
+                                    <div className=''>
+                                        {card.buttons.map((button, index) => (
+                                            <a key={index} href={button.link} className='card-button'>
+                                                {button.text}
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
+                                <span>{card.date}</span>
+                            </div>
+                            <h3>{card.title}</h3>
+                            <p>{card.description}</p>
+                        </div>
                     </div>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
+        </section>
     );
 }
 
